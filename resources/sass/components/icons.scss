@@ -1,0 +1,43 @@
+.vehicle-icon {
+  @apply p-2 rounded-lg flex -mx-2 font-bold font-heading w-32 h-16;
+
+  .column {
+    @apply py-2 flex justify-center items-center;
+
+    &.icon-container {
+      @apply w-1/3 pr-2;
+      svg {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    &.number-container {
+      @apply w-2/3 rounded-tr rounded-br text-xl;
+    }
+  }
+
+  &.endeavour {
+    @apply bg-endeavour;
+
+    .icon-container {
+      @apply text-white;
+    }
+
+    .number-container {
+      @apply bg-white text-endeavour;
+    }
+  }
+}
+
+a:hover > .search-icon {
+  @apply bg-regal-blue;
+}
+
+.search-icon {
+  @apply bg-endeavour p-2 mt-2 rounded-lg flex font-bold font-heading w-full h-12;
+
+  .column {
+    @apply w-1/2 flex justify-center items-center text-white;
+  }
+}

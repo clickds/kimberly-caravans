@@ -1,0 +1,36 @@
+.stock-modal-icons {
+  .stock-form-modal-opener {
+    @apply w-full;
+
+    @screen md {
+      @apply w-1/3 relative;
+
+      &:not(:last-child)::after {
+        @apply absolute block bg-gallery;
+        position: absolute;
+        content: "";
+        display: block;
+        height: 80%;
+        width: 1px;
+        right: 0;
+        top: 10%;
+      }
+    }
+  }
+
+  .icon-container {
+    @apply text-shiraz flex justify-center;
+  }
+
+  &.small {
+    .icon-container {
+      @apply h-8;
+    }
+  }
+
+  &.large {
+    .icon-container {
+      @apply h-12;
+    }
+  }
+}

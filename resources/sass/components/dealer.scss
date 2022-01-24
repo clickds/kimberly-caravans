@@ -1,0 +1,17 @@
+.dealer-servicing-and-facilities-wysiwyg {
+  ul {
+    @apply list-none;
+
+    li {
+      @apply flex items-center;
+
+      &::before {
+        @apply w-4 h-4 mr-1;
+        display: inline-block;
+        content: "";
+        background-image: url("../images/features-tick.svg");
+        background-size: contain;
+      }
+    }
+  }
+}

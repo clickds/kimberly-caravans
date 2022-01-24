@@ -1,0 +1,19 @@
+.synced-slider {
+  .nav-slider-container {
+    @apply flex items-stretch mt-2;
+
+    .control {
+      @apply cursor-pointer px-1 flex flex-col justify-center bg-gallery;
+    }
+
+    .tns-outer {
+      @apply flex-grow;
+    }
+
+    .nav-slider {
+      .slide-content {
+        @apply border border-gallery bg-white text-shiraz text-center;
+      }
+    }
+  }
+}

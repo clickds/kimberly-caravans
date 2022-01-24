@@ -1,0 +1,9 @@
+.vehicle-range-slider {
+  @apply relative;
+
+  .controls {
+    @apply absolute left-0 z-10 w-full flex justify-between items-center text-white;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

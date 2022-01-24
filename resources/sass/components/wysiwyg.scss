@@ -1,0 +1,320 @@
+.wysiwyg {
+  .table {
+    @apply overflow-x-auto w-full block;
+
+    table {
+      @apply table-auto w-full whitespace-no-wrap;
+    }
+
+    thead {
+      @apply font-bold font-heading;
+    }
+
+    th,
+    td {
+      @apply py-1 px-2;
+    }
+  }
+
+  hr {
+    @apply my-2;
+  }
+
+  ul {
+    @apply list-disc list-outside ml-4;
+  }
+
+  ul li::marker {
+    @apply text-endeavour;
+  }
+
+  ol {
+    @apply list-decimal list-outside ml-8;
+  }
+
+  p.intro {
+    @apply text-xl font-medium;
+  }
+
+  a {
+    @apply text-shiraz;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+
+  .image {
+    @apply block max-w-full;
+
+    @screen md {
+      &.image-style-align-center {
+        img {
+          @apply mx-auto;
+        }
+      }
+
+      &.image-style-align-left {
+        @apply float-left mr-8;
+      }
+
+      &.image-style-align-right {
+        @apply float-right ml-8;
+      }
+
+      &.image-style-align-left::after,
+      &.image-style-align-right::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+  }
+}
+
+.bg-regal-blue .wysiwyg,
+.bg-endeavour .wysiwyg,
+.bg-shiraz .wysiwyg {
+  @apply text-white;
+
+  a {
+    @apply text-web-orange;
+  }
+
+  ul li::marker {
+    @apply text-white;
+  }
+
+  hr {
+    @apply border-white;
+  }
+
+  h1,
+  h2 {
+    @apply text-white;
+  }
+
+  h3,
+  h4,
+  h5 {
+    @apply text-web-orange;
+  }
+}
+
+.bg-regal-blue .wysiwyg,
+.bg-endeavour .wysiwyg {
+  .table {
+    thead {
+      @apply bg-shiraz text-white;
+    }
+
+    tbody {
+      @apply bg-gallery text-tundora;
+
+      tr:not(:last-of-type) {
+        @apply border-b-2 border-shiraz;
+      }
+    }
+  }
+}
+
+// Override the above just for shiraz background
+.bg-shiraz .wysiwyg {
+  a {
+    @apply text-web-orange;
+  }
+
+  .table {
+    thead {
+      @apply bg-regal-blue text-white;
+    }
+
+    tbody {
+      @apply bg-gallery text-tundora;
+
+      tr:not(:last-of-type) {
+        @apply border-b-2 border-regal-blue;
+      }
+    }
+  }
+}
+
+.bg-web-orange .wysiwyg {
+  @apply text-white;
+
+  .table {
+    thead {
+      @apply bg-regal-blue text-white;
+    }
+
+    tbody {
+      @apply bg-gallery text-tundora;
+
+      tr:not(:last-of-type) {
+        @apply border-b-2 border-regal-blue;
+      }
+    }
+  }
+
+  hr {
+    @apply border-white;
+  }
+
+  h1,
+  h2 {
+    @apply text-white;
+  }
+
+  h3,
+  h4,
+  h5 {
+    @apply text-endeavour;
+  }
+}
+
+.bg-alabaster .wysiwyg,
+.bg-gallery .wysiwyg,
+.bg-white .wysiwyg,
+.bg-transparent .wysiwyg {
+  @apply text-tundora;
+
+  .table {
+    thead {
+      @apply bg-regal-blue text-white;
+    }
+
+    tbody {
+      @apply text-tundora;
+
+      tr:not(:last-of-type) {
+        @apply border-b-2 border-regal-blue;
+      }
+    }
+  }
+
+  hr {
+    @apply border-tundora;
+  }
+
+  h1,
+  h2 {
+    @apply text-regal-blue;
+  }
+
+  h3,
+  h4,
+  h5 {
+    @apply text-endeavour;
+  }
+}
+
+.bg-white .wysiwyg,
+.bg-transparent .wysiwyg {
+  .table {
+    tbody {
+      @apply bg-gallery;
+    }
+  }
+}
+
+.bg-alabaster .wysiwyg,
+.bg-gallery .wysiwyg {
+  .table {
+    tbody {
+      @apply bg-white;
+    }
+  }
+}
+
+.bg-benimar-primero-purple .wysiwyg,
+.bg-benimar-benivan-orange .wysiwyg,
+.bg-mobilvetta-red .wysiwyg,
+.bg-majestic-grey .wysiwyg,
+.bg-marquis-blue .wysiwyg,
+.bg-marquis-gold .wysiwyg,
+.bg-marquis-dark-grey .wysiwyg,
+.bg-monarch .wysiwyg,
+.bg-service-blue .wysiwyg,
+.bg-autumn-brown .wysiwyg,
+.bg-winter-blue .wysiwyg,
+.bg-black .wysiwyg {
+  @apply text-white;
+
+  .table {
+    thead {
+      @apply text-white;
+    }
+
+    tbody {
+      @apply text-white;
+
+      tr:not(:last-of-type) {
+        @apply border-b-2 border-white;
+      }
+    }
+  }
+
+  hr {
+    @apply border-white;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-white;
+  }
+}
+
+.bg-benimar-mileo-yellow .wysiwyg,
+.bg-benimar-tessoro-green .wysiwyg,
+.bg-spring-green .wysiwyg,
+.bg-summer-yellow .wysiwyg,
+.bg-january-sale-pink .wysiwyg {
+  @apply text-black;
+
+  .table {
+    thead {
+      @apply text-black;
+    }
+
+    tbody {
+      @apply text-black;
+
+      tr:not(:last-of-type) {
+        @apply border-b-2 border-black;
+      }
+    }
+  }
+
+  hr {
+    @apply border-black;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply text-black;
+  }
+}
+
+.bg-mobilvetta-red .wysiwyg,
+.bg-shiraz .wysiwyg,
+.bg-monarch .wysiwyg {
+  a {
+    @apply text-web-orange;
+  }
+}
+
+.bg-service-blue .wysiwyg,
+.bg-winter-blue .wysiwyg,
+.bg-marquis-blue .wysiwyg,
+.bg-endeavour .wysiwyg,
+.bg-regal-blue .wysiwyg {
+  a {
+    @apply text-web-orange;
+  }
+}

@@ -1,0 +1,71 @@
+version: "3"
+
+services:
+  marquis-app:
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    container_name: marquis-app
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www:delegated
+      - .docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini:delegated
+    networks:
+      - marquis-network
+    depends_on:
+      - marquis-database
+
+  marquis-webserver:
+    image: nginx:alpine
+    container_name: marquis-webserver
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www:delegated
+      - .docker/nginx/conf.d/:/etc/nginx/conf.d:delegated
+    networks:
+      marquis-network:
+        aliases:
+          - marquis.local
+    depends_on:
+      - marquis-app
+
+  marquis-database:
+    image: mysql:5.7.22
+    container_name: marquis-database
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_USER: marquis
+      MYSQL_PASSWORD: marquis
+      MYSQL_DATABASE: marquis
+    volumes:
+      - marquis-database-data:/var/lib/mysql
+      - .docker/mysql/my.cnf:/etc/mysql/my.cnf:delegated
+    networks:
+      - marquis-network
+
+  marquis-test-database:
+    image: mysql:5.7.22
+    container_name: marquis-test-database
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_USER: marquis
+      MYSQL_PASSWORD: marquis
+      MYSQL_DATABASE: marquis
+    volumes:
+      - .docker/mysql/my.cnf:/etc/mysql/my.cnf:delegated
+    networks:
+      - marquis-network
+
+networks:
+  marquis-network:
+    driver: bridge
+
+volumes:
+  marquis-database-data:
+    driver: local

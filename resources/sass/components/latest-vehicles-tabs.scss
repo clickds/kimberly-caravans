@@ -1,0 +1,33 @@
+.latest-vehicles-tabs {
+  &__header {
+    @apply text-xl;
+    font-family: "Exo 2";
+
+    ul {
+      li {
+        @apply text-regal-blue font-semibold;
+
+        &:hover {
+          cursor: pointer;
+          text-decoration: underline;
+        }
+
+        &.active {
+          @apply text-shiraz underline;
+        }
+      }
+    }
+  }
+
+  &__body {
+    @apply mt-16;
+
+    &__wrapper {
+      @apply hidden;
+
+      &.active {
+        display: grid;
+      }
+    }
+  }
+}

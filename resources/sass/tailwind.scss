@@ -1,0 +1,52 @@
+@tailwind base;
+
+h1 {
+  @apply text-mobile-h1;
+  @screen md {
+    @apply text-h1;
+  }
+}
+
+h2 {
+  @apply text-mobile-h2;
+  @screen md {
+    @apply text-h2;
+  }
+}
+
+h3 {
+  @apply text-mobile-h3;
+  @screen md {
+    @apply text-h3;
+  }
+}
+
+h4 {
+  @apply text-mobile-h4;
+  @screen md {
+    @apply text-h4;
+  }
+}
+
+h5 {
+  @apply text-mobile-h5;
+  @screen md {
+    @apply text-h5;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-tundora;
+  font-family: "Exo 2";
+  @apply font-bold;
+}
+
+@tailwind components;
+@tailwind utilities;
+@import "./variables";
+@import "./custom-utilities";

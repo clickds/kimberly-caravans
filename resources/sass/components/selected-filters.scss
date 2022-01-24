@@ -1,0 +1,20 @@
+.selected-filters {
+  @apply flex-wrap -mx-2;
+
+  @screen md {
+    @apply flex;
+  }
+
+  .filter-option {
+    @apply p-1 flex items-center border border-solid border-dove-gray;
+
+    .name {
+      @apply flex-grow;
+    }
+
+    .icon {
+      @apply cursor-pointer ml-2 text-dove-gray;
+    }
+  }
+}
+

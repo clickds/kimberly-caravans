@@ -1,0 +1,44 @@
+form.vacancy-application-form {
+  fieldset {
+    @apply bg-gray-400 flex flex-col mb-10;
+
+    legend {
+      @apply w-full bg-endeavour text-white p-3 pl-10 text-h4;
+    }
+
+    .field-group {
+      @apply p-10;
+
+      .input-row {
+        @apply mb-5;
+      }
+
+      .input-group {
+        @apply flex flex-col;
+
+        label {
+          @apply mb-2 text-black;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select {
+          @apply bg-white w-full h-10 px-3;
+        }
+
+        .radio-group {
+          @apply h-full flex flex-row items-center;
+        }
+
+        textarea {
+          @apply bg-white w-full h-32 p-3;
+        }
+
+        input[type="submit"] {
+          @apply w-full bg-endeavour text-white p-3 text-center;
+        }
+      }
+    }
+  }
+}

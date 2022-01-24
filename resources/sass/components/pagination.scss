@@ -1,0 +1,43 @@
+.pagination {
+  @apply flex flex-row flex-wrap list-none;
+
+  .pagination-item {
+    @apply hidden border-r-2 border-endeavour;
+
+    @screen md {
+      @apply block;
+    }
+
+    &.first,
+    &.previous,
+    &.next,
+    &.last {
+      @apply block;
+    }
+
+    &:last-child {
+      @apply border-r-0;
+    }
+
+    &.active span {
+      @apply text-shiraz;
+    }
+
+    span,
+    a {
+      @apply block text-endeavour font-heading font-semibold px-2;
+
+      @screen md {
+        @apply px-4;
+      }
+
+      &:hover {
+        @apply text-shiraz;
+      }
+    }
+
+    a {
+      @apply cursor-pointer;
+    }
+  }
+}

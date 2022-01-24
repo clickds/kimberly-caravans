@@ -1,0 +1,32 @@
+header {
+  .main-header {
+    background-image: url("/images/crown.svg");
+    background-repeat: no-repeat;
+    border-top: 10px solid rgba(154, 154, 154, 0.5);
+
+    background-position: -20% 0%;
+    background-size: 500px 175px;
+
+    @screen md {
+      background-position: 350% 20%;
+      background-size: 700px 245px;
+    }
+    @screen lg {
+      background-position: 121% 105%;
+      background-size: 834px 290px;
+    }
+  }
+
+  .main-header__bottom {
+    background-color: $shiraz;
+    //background-image: url("/images/crown.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: -20% 0%;
+    background-size: 500px 175px;
+
+    @screen lg {
+      background-image: none;
+    }
+  }
+}

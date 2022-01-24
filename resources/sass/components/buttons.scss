@@ -1,0 +1,27 @@
+.button {
+  @apply inline-block py-3 px-8 my-2 border-2 font-medium;
+
+  &-endeavour {
+    @apply bg-endeavour text-white border-white;
+
+    &:hover {
+      @apply bg-white text-endeavour;
+    }
+  }
+
+  &-shiraz {
+    @apply bg-shiraz text-white border-white;
+
+    &:hover {
+      @apply bg-white text-shiraz border-shiraz;
+    }
+  }
+
+  &-white {
+    @apply border-endeavour text-endeavour;
+
+    &:hover {
+      @apply bg-endeavour text-white;
+    }
+  }
+}

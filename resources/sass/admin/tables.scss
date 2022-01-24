@@ -1,0 +1,39 @@
+.admin-table {
+  @apply table-auto;
+
+  a {
+    @apply text-shiraz;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+
+  .action {
+    a {
+      @apply text-white;
+    }
+
+    &:hover {
+      @apply no-underline;
+    }
+  }
+
+  thead {
+    td {
+      @apply font-bold;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        @apply bg-gray-100;
+      }
+    }
+  }
+
+  td {
+    @apply px-4 py-2 border;
+  }
+}

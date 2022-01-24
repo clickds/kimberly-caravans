@@ -1,0 +1,44 @@
+// For use on news/events e.t.c. listing pages
+.listing-card {
+  @apply h-full flex flex-col;
+
+  .image-container {
+    > img {
+      @apply object-fill object-center w-full;
+    }
+  }
+
+  .content-container {
+    @apply py-4 flex-grow;
+
+    @screen md {
+      @apply px-4;
+    }
+
+    @screen lg {
+      @apply px-8;
+    }
+
+    .date {
+    }
+
+    .excerpt {
+      @apply my-4;
+    }
+
+    .title {
+      @apply text-h3 font-heading;
+      > a {
+        @apply text-endeavour;
+      }
+    }
+
+    .read-more {
+      @apply underline text-endeavour capitalize;
+
+      &:hover {
+        @apply text-shiraz;
+      }
+    }
+  }
+}

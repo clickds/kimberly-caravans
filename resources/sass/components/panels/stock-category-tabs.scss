@@ -1,0 +1,20 @@
+.stock-category-select {
+  @apply relative;
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  label:after {
+    content: "\f078";
+    font-family: "Font Awesome 5 Free";
+    @apply text-shiraz absolute top-0 right-0 z-10 h-full;
+    padding: 6px 0px;
+    text-align: center;
+    width: 30px;
+    pointer-events: none;
+    box-sizing: border-box;
+  }
+}

@@ -1,0 +1,15 @@
+.main-navigation {
+  li {
+    a {
+      @apply border-r;
+    }
+
+    &:last-of-type {
+      @apply shadow-inner;
+
+      a {
+        @apply border-0;
+      }
+    }
+  }
+}

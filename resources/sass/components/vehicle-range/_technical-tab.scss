@@ -1,0 +1,17 @@
+.technical-tab {
+  .section-heading {
+    @apply px-2 mb-3 text-endeavour font-semibold;
+
+    @screen md {
+      @apply mb-6;
+    }
+  }
+
+  .table-heading {
+    @apply px-2 py-1 bg-shiraz text-white font-semibold;
+  }
+
+  .table-row {
+    @apply px-2 py-1 grid grid-cols-2 gap-6;
+  }
+}

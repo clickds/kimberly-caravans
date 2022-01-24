@@ -1,0 +1,35 @@
+nav{
+	ul.pagination{
+		@apply flex;
+		@apply justify-end;
+		@apply bg-gray-100;
+		@apply mt-3;
+		@apply mb-4;
+		@apply py-2;
+		@apply px-3;
+		@apply border;
+		@apply font-normal;
+		@apply text-sm;
+
+		li.page-item{
+			margin-left: 10px;
+			
+			a{
+				padding: 3px 5px;
+				border: 1px solid #f6f6f6;
+			}
+
+			&:not(.active) {
+			
+				color: $admin-brand-color;
+				a{
+					&:hover{
+						background-color: $admin-brand-color;
+						border: 1px solid $admin-brand-color;
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}

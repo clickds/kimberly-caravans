@@ -1,0 +1,73 @@
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
+
+parameters:
+    paths:
+        - app
+
+    # The level 8 is the highest level
+    level: max
+
+    checkMissingIterableValueType: false
+
+    ignoreErrors:
+      -
+        message: '#Call to an undefined method [a-zA-Z0-9\\_]+::sluggableSources\(\)#'
+        path: app/Models/Page.php
+      -
+        message: '#Access to an undefined property [a-zA-Z0-9\\_]+::\$pageable#'
+        path: app/Models/Page.php
+      -
+        message: '#Access to an undefined property [a-zA-Z0-9\\_]+::\$site_id#'
+        path: app/Models/Page.php
+      -
+        message: '#Access to an undefined property [a-zA-Z0-9\\_]+::\$parent_id#'
+        path: app/Models/Page.php
+      -
+        message: '#Access to an undefined property [a-zA-Z0-9\\_]+::\$feedStockItemVideo#'
+        path: app/Services/Importers/StockFeed/BaseCreator.php
+      -
+        message: '#Access to an undefined property [a-zA-Z0-9\\_]+::\$pivot#'
+        paths:
+          - app/Services/Caravan/StockItemSaver.php
+          - app/Services/Motorhome/StockItemSaver.php
+      -
+        message: '#Property [a-zA-Z0-9\\_]+::\$article \([a-zA-Z0-9\\_]+\) does not accept [a-zA-Z0-9\\_]+|[a-zA-Z0-9\\_]+#'
+        path: app/Facades/Article/ShowPage.php
+      -
+        message: '#Property [a-zA-Z0-9\\_]+::\$caravan \([a-zA-Z0-9\\_]+\) does not accept [a-zA-Z0-9\\_]+|[a-zA-Z0-9\\_]+#'
+        path: app/Facades/CaravanPage.php
+      -
+        message: '#Property [a-zA-Z0-9\\_]+::\$dealer \([a-zA-Z0-9\\_]+\) does not accept [a-zA-Z0-9\\_]+|[a-zA-Z0-9\\_]+#'
+        path: app/Facades/Dealer/ShowPage.php
+      -
+        message: '#Property [a-zA-Z0-9\\_]+::\$event \([a-zA-Z0-9\\_]+\) does not accept [a-zA-Z0-9\\_]+|[a-zA-Z0-9\\_]+#'
+        path: app/Facades/Event/ShowPage.php
+      -
+        message: '#Property [a-zA-Z0-9\\_]+::\$motorhome \([a-zA-Z0-9\\_]+\) does not accept [a-zA-Z0-9\\_]+|[a-zA-Z0-9\\_]+#'
+        path: app/Facades/MotorhomePage.php
+      -
+        message: '#Property [a-zA-Z0-9\\_]+::\$manufacturer \([a-zA-Z0-9\\_]+\) does not accept [a-zA-Z0-9\\_]+|[a-zA-Z0-9\\_]+#'
+        paths:
+          - app/Facades/Manufacturer/CaravansPage.php
+          - app/Facades/Manufacturer/MotorhomesPage.php
+      -
+        message: '#Property [a-zA-Z0-9\\_]+::\$stockItem \([a-zA-Z0-9\\_]+\) does not accept [a-zA-Z0-9\\_]+|[a-zA-Z0-9\\_]+#'
+        paths:
+          - app/Facades/StockItem/CaravanPage.php
+          - app/Facades/StockItem/MotorhomePage.php
+      -
+        message: '#Property [a-zA-Z0-9\\_]+::\$SpecialOffer \([a-zA-Z0-9\\_]+\) does not accept [a-zA-Z0-9\\_]+|[a-zA-Z0-9\\_]+#'
+        path: app/Facades/SpecialOffer/ShowPage.php
+      -
+        message: '#Property [a-zA-Z0-9\\_]+::\$video \([a-zA-Z0-9\\_]+\) does not accept [a-zA-Z0-9\\_]+|[a-zA-Z0-9\\_]+#'
+        path: app/Facades/Video/ShowPage.php
+      -
+        message: '#Parameter \#1 $page of function pageLink expects [a-zA-Z0-9\\_]+|null, [a-zA-Z0-9\\_]+||[a-zA-Z0-9\\_]+null given#'
+        paths:
+          - app/Http/Resources/Api/CaravanStockItemResource.php
+          - app/Http/Resources/Api/MotorhomeStockItemResource.php
+      -
+        message: '#Method [a-zA-Z0-9\\_]+::sites\(\) should return [a-zA-Z0-9\\_]+ but returns \$this\([a-zA-Z0-9\\_]+\)#'
+        paths:
+          - app/Models

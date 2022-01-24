@@ -1,0 +1,42 @@
+article {
+  .article__header {
+  }
+
+  .article__body {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply mb-3;
+    }
+
+    h2 {
+      @apply text-3xl;
+    }
+
+    h3 {
+      @apply text-2xl;
+    }
+
+    h4 {
+      @apply text-xl;
+    }
+
+    a {
+      @apply font-bold text-shiraz;
+
+      &:hover {
+        @apply underline;
+      }
+    }
+
+    ul {
+      @apply list-disc pl-8;
+    }
+
+    ol {
+      @apply list-decimal pl-8;
+    }
+  }
+}

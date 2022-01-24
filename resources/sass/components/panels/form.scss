@@ -1,0 +1,111 @@
+.form-builder-panel {
+  a {
+    @apply text-shiraz;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+
+  .heading {
+    @apply text-endeavour text-center mb-4;
+  }
+
+  form > fieldset {
+    @apply bg-gallery mb-4 text-tundora;
+
+    > legend {
+      @apply w-full py-2 px-4 font-heading font-semibold text-xl bg-endeavour text-white;
+    }
+
+    .content-container {
+      @apply p-4;
+
+      .fields-container {
+        @apply flex flex-wrap -mx-2;
+
+        input[type="text"],
+        input[type="email"],
+        input[type="submit"],
+        select {
+          @apply w-full px-4 h-10;
+        }
+
+        textarea {
+          @apply w-full p-4;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+          @apply mr-2;
+        }
+
+        input[type="submit"] {
+          @apply h-10 cursor-pointer bg-shiraz text-white text-center font-heading font-semibold;
+
+          &:hover {
+            @apply bg-monarch;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bg-shiraz .form-builder-panel {
+  a {
+    @apply text-web-orange;
+  }
+}
+
+.bg-regal-blue .form-builder-panel,
+.bg-endeavour .form-builder-panel,
+.bg-shiraz .form-builder-panel {
+  @apply text-white;
+
+  h1,
+  h2 {
+    @apply text-white;
+  }
+
+  h3,
+  h4,
+  h5 {
+    @apply text-web-orange;
+  }
+}
+
+.bg-regal-blue .form-builder-panel,
+.bg-endeavour .form-builder-panel {
+  form > fieldset > legend {
+    @apply bg-shiraz;
+  }
+}
+
+.bg-web-orange .form-builder-panel {
+  h1,
+  h2 {
+    @apply text-white;
+  }
+
+  h3,
+  h4,
+  h5 {
+    @apply text-endeavour;
+  }
+}
+
+.bg-alabaster .form-builder-panel,
+.bg-gallery .form-builder-panel,
+.bg-white .form-builder-panel {
+  h1,
+  h2 {
+    @apply text-regal-blue;
+  }
+
+  h3,
+  h4,
+  h5 {
+    @apply text-endeavour;
+  }
+}

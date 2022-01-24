@@ -1,0 +1,131 @@
+.manufacturer-tabs .tabs .tabs__navigation ul li .name {
+  @apply text-xl font-bold font-heading;
+}
+
+.tabs {
+  .tabs__content {
+    .tab {
+      &.active {
+        @apply flex-wrap;
+      }
+    }
+  }
+
+  .tabs__navigation {
+    ul {
+      li {
+        position: relative;
+        @apply w-full text-center cursor-pointer;
+        transition: all 0.3s;
+
+        @screen md {
+          @apply w-auto flex-grow;
+
+          &:last-of-type {
+            @apply border-r-0;
+          }
+        }
+
+        &:hover,
+        &.active {
+          cursor: pointer;
+        }
+      }
+
+      &.dropdown li {
+        @apply border-r-0;
+      }
+    }
+
+    // Tabs with a solid background
+    &--bg-solid {
+      ul li {
+        @apply p-4;
+      }
+
+      &-endeavour ul li {
+        @screen md {
+          @apply border-white border-solid border-r-2;
+
+          &:last-of-type {
+            @apply border-r-0;
+          }
+        }
+
+        &:hover,
+        &.active {
+          @apply bg-endeavour;
+          .name {
+            @apply text-white;
+          }
+        }
+      }
+    }
+
+    // Tabs with no solid background only text
+    &--text {
+      ul li {
+        .name {
+          @apply inline-block mx-auto py-1 border-solid;
+        }
+
+        @screen md {
+          &:not(:last-of-type):after {
+            content: "";
+            width: 2px;
+            @apply block bg-tundora absolute top-0 right-0 h-full;
+          }
+        }
+      }
+
+      &-endeavour ul li {
+        .name {
+          @apply text-endeavour;
+        }
+
+        &:hover,
+        &.active {
+          .name {
+            @apply text-shiraz border-shiraz border-b-2;
+          }
+        }
+      }
+    }
+  }
+
+  .tabs__secondary-navigation {
+    ul {
+      li {
+        @apply w-full cursor-pointer text-center text-4xl font-heading;
+
+        @screen md {
+          @apply text-left;
+        }
+      }
+    }
+  }
+
+  &__navigation-raised.tabs__navigation--bg-solid {
+    &-endeavour ul li {
+      &:hover:before,
+      &.active:before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 0;
+        height: 5px;
+        @apply bg-endeavour w-full;
+      }
+    }
+  }
+
+  &__content {
+    &__element {
+      transition: all 0.1s;
+
+      &:hover {
+        border: 10px solid rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+}
