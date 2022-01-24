@@ -22,7 +22,7 @@ This allows us to set a default site for local development. There is a basic tet
 
 Build and run the containers using `docker-compose up`
 
-You will then need to attach to the `marquis-app` container by running `docker-compose exec marquis-app bash`.
+You will then need to attach to the `kimberly-caravans-app` container by running `docker-compose exec kimberly-caravans-app bash`.
 
 ## Laravel setup
 
