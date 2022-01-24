@@ -1,23 +1,23 @@
 version: "3"
 
 services:
-  marquis-app:
+  kimberly-caravans-app:
     build:
       context: .
       dockerfile: .docker/Dockerfile
-    container_name: marquis-app
+    container_name: kimberly-caravans-app
     working_dir: /var/www
     volumes:
       - ./:/var/www:delegated
       - .docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini:delegated
     networks:
-      - marquis-network
+      - kimberly-caravans-network
     depends_on:
-      - marquis-database
+      - kimberly-caravans-database
 
-  marquis-webserver:
+  kimberly-caravans-webserver:
     image: nginx:alpine
-    container_name: marquis-webserver
+    container_name: kimberly-caravans-webserver
     ports:
       - "80:80"
       - "443:443"
@@ -25,47 +25,47 @@ services:
       - ./:/var/www:delegated
       - .docker/nginx/conf.d/:/etc/nginx/conf.d:delegated
     networks:
-      marquis-network:
+      kimberly-caravans-network:
         aliases:
-          - marquis.local
+          - kimberlycaravans.local
     depends_on:
-      - marquis-app
+      - kimberly-caravans-app
 
-  marquis-database:
+  kimberly-caravans-database:
     image: mysql:5.7.22
-    container_name: marquis-database
+    container_name: kimberly-caravans-database
     ports:
       - "3306:3306"
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_USER: marquis
-      MYSQL_PASSWORD: marquis
-      MYSQL_DATABASE: marquis
+      MYSQL_USER: kimberlycaravans
+      MYSQL_PASSWORD: kimberlycaravans
+      MYSQL_DATABASE: kimberlycaravans
     volumes:
-      - marquis-database-data:/var/lib/mysql
+      - kimberly-caravans-database-data:/var/lib/mysql
       - .docker/mysql/my.cnf:/etc/mysql/my.cnf:delegated
     networks:
-      - marquis-network
+      - kimberly-caravans-network
 
-  marquis-test-database:
+  kimberly-caravans-test-database:
     image: mysql:5.7.22
-    container_name: marquis-test-database
+    container_name: kimberly-caravans-test-database
     ports:
       - "3307:3306"
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_USER: marquis
-      MYSQL_PASSWORD: marquis
-      MYSQL_DATABASE: marquis
+      MYSQL_USER: kimberlycaravans
+      MYSQL_PASSWORD: kimberlycaravans
+      MYSQL_DATABASE: kimberlycaravans
     volumes:
       - .docker/mysql/my.cnf:/etc/mysql/my.cnf:delegated
     networks:
-      - marquis-network
+      - kimberly-caravans-network
 
 networks:
-  marquis-network:
+  kimberly-caravans-network:
     driver: bridge
 
 volumes:
-  marquis-database-data:
+  kimberly-caravans-database-data:
     driver: local
