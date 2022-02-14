@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Models\Category;
+
+/**
+ * Class CategoryRepository
+ * @package App\Repositories
+ */
+class CategoryRepository extends BaseRepository
+{
+
+
+    /**
+     * @param string $catName
+     * @return Category
+     */
+    public function getByNameOrCreate(string $catName) : Category
+    {
+
+
+        /** @var Category $cat */
+        if(!$cat = Category::where('name',$catName)->first()){
+
+            // create new cat
+            $cat = (new Category())->setName($catName);
+            $cat->save();
+        }
+
+        return $cat;
+    }
+}
