@@ -1,5 +1,5 @@
 @extends('layouts/site')
 
 @section('body')
-    HOME PAGE
+    CONTACT US
 @endsection

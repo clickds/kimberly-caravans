@@ -4,3 +4,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
     && apt-get update && apt-get install -y git libzip-dev unzip sendmail libpng-dev libonig-dev \
     && docker-php-ext-install zip gd pdo pdo_mysql mbstring mysqli \
     && a2enmod rewrite headers
+
+COPY ./ /var/www/html
+
+WORKDIR /var/www/html
+
+RUN composer install
