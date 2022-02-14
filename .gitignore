@@ -1,5 +1,3 @@
 .env
 vendor/
-public/
-!public/.gitkeep
 .DS_Store

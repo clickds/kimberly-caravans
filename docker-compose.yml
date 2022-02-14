@@ -1,0 +1,27 @@
+version: '3.4'
+services:
+  kimberly-db:
+    container_name: kimberly-db
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'kimberly'
+      MYSQL_USER: 'kimberly'
+      MYSQL_PASSWORD: 'kimberly'
+      MYSQL_ROOT_PASSWORD: 'kimberly'
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+  kimberly-web:
+    depends_on:
+      - delta-db
+    container_name: kimberly-web
+    ports:
+      - 80:80
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
+    build:
+      context: .
+    volumes:
+      - ./:/var/www/html
