@@ -2,7 +2,7 @@ version: '3.4'
 services:
   kimberly-db:
     container_name: kimberly-db
-    image: mysql:5.7
+    image: mysql:8.0
     restart: always
     environment:
       MYSQL_DATABASE: 'kimberly'
@@ -15,7 +15,7 @@ services:
       - 3306
   kimberly-web:
     depends_on:
-      - delta-db
+      - kimberly-db
     container_name: kimberly-web
     ports:
       - 80:80
