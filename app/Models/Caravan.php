@@ -61,7 +61,9 @@ class Caravan extends Model
     protected $casts = [
         'kimberley_date_updated' => 'datetime:Y-m-d H:i:s',
         'created_at' => 'datetime:Y-m-d H:i:s',
-        'updated_at' => 'datetime:Y-m-d H:i:s'
+        'updated_at' => 'datetime:Y-m-d H:i:s',
+        'web_price' => 'decimal: 2',
+        'previous_price' => 'decimal: 2'
     ];
 
 
