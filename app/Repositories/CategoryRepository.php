@@ -8,7 +8,7 @@ use App\Models\Category;
  * Class CategoryRepository
  * @package App\Repositories
  */
-class CategoryRepository extends BaseRepository
+class CategoryRepository
 {
 
 

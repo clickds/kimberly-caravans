@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\CaravanRepository;
 use Illuminate\Contracts\View\View;
 
 /**
@@ -11,6 +12,21 @@ use Illuminate\Contracts\View\View;
  */
 class WebCaravansController extends Controller
 {
+
+    /**
+     * @var CaravanRepository
+     */
+    private CaravanRepository $caravanRepo;
+
+    /**
+     * WebCaravansController constructor.
+     * @param CaravanRepository $caravanRepository
+     */
+    public function __construct(CaravanRepository $caravanRepository)
+    {
+        $this->caravanRepo = $caravanRepository;
+    }
+
 
     /**
      * @return View
@@ -25,7 +41,13 @@ class WebCaravansController extends Controller
      */
     public function new() : View
     {
-        return view('caravans.new');
+
+        // fetch
+        $caravans = $this->caravanRepo->getNewByCategory();
+
+        return view('caravans.new',[
+            'caravans'=>$caravans
+        ]);
     }
 
     /**
@@ -33,6 +55,12 @@ class WebCaravansController extends Controller
      */
     public function used() : View
     {
-        return view('caravans.used');
+
+        // fetch
+        $caravans = $this->caravanRepo->getUsedByCategory();
+
+        return view('caravans.used',[
+            'caravans'=>$caravans
+        ]);
     }
 }

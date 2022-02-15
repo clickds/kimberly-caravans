@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * Class Caravan
@@ -62,6 +63,23 @@ class Caravan extends Model
         'created_at' => 'datetime:Y-m-d H:i:s',
         'updated_at' => 'datetime:Y-m-d H:i:s'
     ];
+
+
+    /**
+     * @return HasOne
+     */
+    public function category() : HasOne
+    {
+        return $this->hasOne(Category::class, 'id', 'category_id');
+    }
+
+    /**
+     * @return HasOne
+     */
+    public function type() : HasOne
+    {
+        return $this->hasOne(Type::class, 'id', 'type_id');
+    }
     
     /**
      * @return int
