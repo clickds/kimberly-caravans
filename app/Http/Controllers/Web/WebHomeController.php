@@ -40,6 +40,7 @@ class WebHomeController extends Controller
         $usedMotorHomes = $this->caravanRepo->getUsedByCategory('Motorhome', 'caravan.kimberley_date_updated');
 
 
+
         return view('home.index',[
             'new_caravans'=>$newCaravans,
             'new_motor_homes'=>$newMotorHomes,

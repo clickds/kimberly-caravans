@@ -3,10 +3,11 @@
 @section('body')
     <!-- THIS IS THE NEW CARAVANS TAB CONTENT -->
     @foreach($new_caravans as $caravan) :
+    {{$caravan->id}}
         {{ $caravan->make }}
         {{ $caravan->model }}
         {{ $caravan->year }}
-    Used/New (bug needs fixing here)
+    New Caravan
         {{ $caravan->reg }}
         {{ $caravan->berths }} Berths
         {{ $caravan->web_price }}
@@ -22,7 +23,7 @@
     {{ $caravan->make }}
     {{ $caravan->model }}
     {{ $caravan->year }}
-    Used/New (bug needs fixing here)
+    Used Caravan
     {{ $caravan->reg }}
     {{ $caravan->berths }} Berths
     {{ $caravan->web_price }}
@@ -39,7 +40,7 @@
     {{ $motorHome->make }}
     {{ $motorHome->model }}
     {{ $motorHome->year }}
-    Used/New (bug needs fixing here)
+  New Motor Home
     {{ $motorHome->reg }}
     {{ $motorHome->berths }} Berths
     {{ $motorHome->web_price }}
@@ -56,7 +57,7 @@
     {{ $motorHome->make }}
     {{ $motorHome->model }}
     {{ $motorHome->year }}
-    Used/New (bug needs fixing here)
+    Used Motor Home
     {{ $motorHome->reg }}
     {{ $motorHome->berths }} Berths
     {{ $motorHome->web_price }}

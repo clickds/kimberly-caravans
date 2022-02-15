@@ -61,7 +61,6 @@ class CaravanRepository
         if($number !== null)
             $query->limit($number);
 
-
         // fetch
         $items = $query->get();
 
