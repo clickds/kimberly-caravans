@@ -6,7 +6,7 @@
         {{ $caravan->make }}
         {{ $caravan->model }}
         {{ $caravan->year }}
-        {{ $caravan->type->name }}
+    Used/New (bug needs fixing here)
         {{ $caravan->reg }}
         {{ $caravan->berths }} Berths
         {{ $caravan->web_price }}
@@ -22,7 +22,7 @@
     {{ $caravan->make }}
     {{ $caravan->model }}
     {{ $caravan->year }}
-    {{ $caravan->type->name }}
+    Used/New (bug needs fixing here)
     {{ $caravan->reg }}
     {{ $caravan->berths }} Berths
     {{ $caravan->web_price }}
@@ -39,7 +39,7 @@
     {{ $motorHome->make }}
     {{ $motorHome->model }}
     {{ $motorHome->year }}
-    {{ $motorHome->type->name }}
+    Used/New (bug needs fixing here)
     {{ $motorHome->reg }}
     {{ $motorHome->berths }} Berths
     {{ $motorHome->web_price }}
@@ -56,7 +56,7 @@
     {{ $motorHome->make }}
     {{ $motorHome->model }}
     {{ $motorHome->year }}
-    {{ $motorHome->type->name }}
+    Used/New (bug needs fixing here)
     {{ $motorHome->reg }}
     {{ $motorHome->berths }} Berths
     {{ $motorHome->web_price }}

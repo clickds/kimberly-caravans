@@ -50,6 +50,7 @@ class CaravanRepository
      */
     public function getNewByCategory(string $category = 'Caravan', string $orderBy = 'caravan.id', string $order = 'DESC', ?int $number = null) : ?Collection
     {
+
         $query = DB::table('caravan')
             ->join('type','caravan.type_id', '=', 'type.id')
             ->join('category','caravan.category_id', '=', 'category.id')
