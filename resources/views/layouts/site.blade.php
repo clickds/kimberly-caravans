@@ -3,7 +3,9 @@
     <head>
         <title>Title Here</title>
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/build.css') }}" />
+       <link rel="stylesheet" type="text/css" href="{{ asset('css/build.css') }}" />
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     </head>
     <body>
         @include('components.nav-bar')
