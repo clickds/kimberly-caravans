@@ -80,7 +80,7 @@ class Caravan extends Model
      */
     public function type() : HasOne
     {
-        return $this->hasOne(Type::class, 'id', 'type_id');
+        return $this->hasOne(Type::class, 'type_id', 'id');
     }
     
     /**

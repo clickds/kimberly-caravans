@@ -7,7 +7,7 @@
         {{ $caravan->make }}
         {{ $caravan->model }}
         {{ $caravan->year }}
-    New Caravan
+    {{$caravan->type->name}}
         {{ $caravan->reg }}
         {{ $caravan->berths }} Berths
         {{ $caravan->web_price }}
