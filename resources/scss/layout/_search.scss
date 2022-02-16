@@ -1,0 +1,70 @@
+.site-search {
+
+    &__container {
+        width: 100%;
+        max-width: 1640px;
+        margin-left: auto;
+        margin-right: auto;          
+    }
+
+
+    &__form {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: block;
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.16) 0px 10px 20px 0px;
+        background-color: rgb(87, 86, 86);
+        padding: 15px 30px;
+        border-radius: 10px;
+        transform: translateY(-50%);
+
+        &__inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        &__item {
+            width: auto;
+            // margin: 0 15px;
+        }
+
+        select {
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 17px;
+            background-color: #fff;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 0.25rem;
+            max-width: 100%;
+            width: 205px;
+            margin: 15px 0;
+
+        }
+        button {
+            background-color: #faa634;
+            @include fontsize(16px);
+            border: none;
+            cursor: pointer;
+            color: #fff;
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            padding-right: 30px;
+            padding-left: 30px;
+            width: 219px;
+            max-width: 100%;
+            display: inline-block;
+            font-weight: 700;
+            text-align: center;
+            border-radius: 5px;
+            margin: 15px 0;
+
+        }
+    }
+
+}

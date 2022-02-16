@@ -8,7 +8,12 @@
 
     </head>
     <body>
-        @include('components.nav-bar')
+        <header class="header">
+            <a class="header__logo" href="/">
+              <img class="header__logo__img" src="{{ asset('images/Group_131.png') }}" alt="Kimberley Caravans Logo">
+            </a>
+            @include('components.nav-bar')
+        </header>
         @yield('body')
         <footer class="site-footer">
             <div class="site-footer__about">

@@ -1,6 +1,88 @@
 @extends('layouts/site')
 
 @section('body')
+
+<div class="carousel">
+    <div class="carousel__inner">
+          <h1 class="carousel__title">The Caravan and <br />Motorhome <br />People</h1>
+          <p class="carousel__text" class="text-xl text-white mb-10 leading-none">We have a large selection available for you</p>
+          <div class="carousel__row">
+              <a class="carousel__row__button" href="#">View Motorhomes</a>
+              <a class="carousel__row__button" href="#">View Caravans</a>
+          </div>
+    </div>
+    <div class="carousel__background"></div>
+</div
+
+
+<section class="site-search">
+    <div class="container site-search__container">
+        <form class="site-search__form">
+            <div class="site-search__form__inner">
+            <div class="site-search__form__item">
+                    <select name="type" class="">
+                        <option value="" selected disabled>Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                    </select>
+                </div>
+                <div class="site-search__form__item">
+                    <select name="type" class="">
+                        <option value="" selected disabled>Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                    </select>
+                </div>
+                <div class="site-search__form__item">
+                    <select name="type" class="">
+                        <option value="" selected disabled>Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                    </select>
+                </div>
+                <div class="site-search__form__item">
+                    <select name="type" class="">
+                        <option value="" selected disabled>Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                    </select>
+                </div>
+                <div class="site-search__form__item">
+                    <select name="type" class="">
+                        <option value="" selected disabled>Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                    </select>
+                </div>
+                <div class="site-search__form__item">
+                    <select name="type" class="">
+                        <option value="" selected disabled>Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                        <option value="">Type</option>
+                    </select>
+                </div>
+                <div class="site-search__form__item">
+                    <button type="submit">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+
+
     <!-- THIS IS THE NEW CARAVANS TAB CONTENT -->
     @foreach($new_caravans as $caravan) :
     {{$caravan->id}}
