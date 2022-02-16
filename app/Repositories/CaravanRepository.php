@@ -102,4 +102,14 @@ class CaravanRepository
         return $items ?? null;
     }
 
+    /**
+     * @param array $filters
+     * @return Collection|null
+     */
+    public function search(array $filters) : ?Collection
+    {
+
+        return null;
+    }
+
 }

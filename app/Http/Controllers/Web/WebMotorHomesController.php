@@ -26,10 +26,12 @@ class WebMotorHomesController extends Controller
     public function index() : View
     {
         // fetch
-        $motorHomes = $this->caravansRepo->getAllByCategory('Motorhome');
+        $new = $this->caravansRepo->getNewByCategory('Motorhome');
+        $used  = $this->caravansRepo->getUsedByCategory('Motorhome');
 
         return view('motor_homes.index',[
-            'motor_homes' => $motorHomes
+            'new_motor_homes'=>$new,
+            'used_motor_homes'=>$used
         ]);
     }
 

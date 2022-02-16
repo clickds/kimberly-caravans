@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Repositories\CaravanRepository;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 /**
  * Class WebCaravansController
@@ -33,7 +34,15 @@ class WebCaravansController extends Controller
      */
     public function index() : View
     {
-        return view('caravans.index');
+
+        $new = $this->caravanRepo->getNewByCategory();
+        $used = $this->caravanRepo->getUsedByCategory();
+
+
+        return view('caravans.index',[
+            'new_caravans'=>$new,
+            'used_caravans'=>$used
+        ]);
     }
 
     /**
@@ -63,4 +72,6 @@ class WebCaravansController extends Controller
             'caravans'=>$caravans
         ]);
     }
+
+
 }

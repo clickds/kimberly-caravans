@@ -6,6 +6,7 @@ use App\Http\Controllers\Web\WebHomeController;
 use App\Http\Controllers\Web\WebMotorHomesController;
 use App\Http\Controllers\Web\WebNewsController;
 use App\Http\Controllers\Web\WebPagesController;
+use App\Http\Controllers\Web\WebSearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,19 +20,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [WebHomeController::class,'index']);
-Route::get('/caravans',[WebCaravansController::class,'index']);
-Route::get('/caravans/new',[WebCaravansController::class,'new']);
-Route::get('/caravans/used',[WebCaravansController::class,'used']);
-Route::get('/motor-homes',[WebMotorHomesController::class,'index']);
-Route::get('/motor-homes/new',[WebMotorHomesController::class,'new']);
-Route::get('/motor-homes/used',[WebMotorHomesController::class,'used']);
-Route::get('/awnings',[WebAwningsController::class,'index']);
-Route::get('/awnings/caravan',[WebAwningsController::class,'caravan']);
-Route::get('/awnings/camper-van',[WebAwningsController::class,'camper']);
-Route::get('/awnings/motor-home',[WebAwningsController::class,'motorHome']);
-Route::get('/news',[WebNewsController::class,'index']);
-Route::get('/news/{news}',[WebNewsController::class,'single']);
+Route::get('/', [WebHomeController::class,'index'])->name('home');
+Route::get('/caravans',[WebCaravansController::class,'index'])->name('caravans.index');
+Route::get('/caravans/new',[WebCaravansController::class,'new'])->name('caravans.new');
+Route::get('/caravans/used',[WebCaravansController::class,'used'])->name('caravans.used');
+Route::get('/motor-homes',[WebMotorHomesController::class,'index'])->name('motorhomes.index');
+Route::get('/motor-homes/new',[WebMotorHomesController::class,'new'])->name('motorhomes.new');
+Route::get('/motor-homes/used',[WebMotorHomesController::class,'used'])->name('motorhomes.used');
+Route::get('/awnings',[WebAwningsController::class,'index'])->name('awnings.index');
+Route::get('/awnings/caravan',[WebAwningsController::class,'caravan'])->name('awnings.caravan');
+Route::get('/awnings/camper-van',[WebAwningsController::class,'camper'])->name('awnings.campervan');
+Route::get('/awnings/motor-home',[WebAwningsController::class,'motorHome'])->name('awnings.motorhome');
+Route::get('/news',[WebNewsController::class,'index'])->name('news.index');
+Route::get('/news/{news}',[WebNewsController::class,'single'])->name('news.single');
 Route::get('/about-us',[WebPagesController::class,'about']);
 Route::get('/contact-us',[WebPagesController::class,'contact']);
 Route::get('/our-locations',[WebPagesController::class,'locations']);
+Route::get('/search',[WebSearchController::class,'index'])->name('search.index');

@@ -1,1 +1,3 @@
-SEARCH BAR
+<form action="{{ route('search.index') }}">
+
+</form>
