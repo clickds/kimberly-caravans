@@ -1,0 +1,25 @@
+@mixin fontsize($size) {
+    $remSize: $size / 16px;
+    font-size: $remSize + rem;
+}
+
+@mixin container() {
+    max-width: 1640px;
+    margin: 0 auto;
+}
+
+@mixin alt_container() {
+    max-width: 1365px;
+    margin: 0 auto;
+}
+
+@mixin row($margin) {
+    @include flex;
+    margin-left:  - $margin;
+    margin-right: - $margin;
+}
+
+@mixin flex() {
+    display: flex;
+    flex-wrap: wrap;
+}
