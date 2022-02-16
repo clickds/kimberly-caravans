@@ -1,4 +1,6 @@
 version: '3.4'
+volumes:
+  kimberly-db:
 services:
   kimberly-db:
     container_name: kimberly-db
@@ -13,6 +15,8 @@ services:
       - 3306:3306
     expose:
       - 3306
+    volumes:
+      - kimberly-db:/var/lib/mysql
   kimberly-web:
     depends_on:
       - kimberly-db

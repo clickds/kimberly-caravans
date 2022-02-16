@@ -8,7 +8,7 @@ use App\Models\Branch;
  * Class BranchRepository
  * @package App\Repositories
  */
-class BranchRepository extends BaseRepository
+class BranchRepository
 {
 
     /**

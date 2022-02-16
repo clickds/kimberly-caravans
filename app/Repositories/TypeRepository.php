@@ -10,7 +10,7 @@ use App\Models\Type;
  * Class TypeRepository
  * @package App\Repositories
  */
-class TypeRepository extends BaseRepository
+class TypeRepository
 {
 
     /**

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * Class Caravan
@@ -60,8 +61,29 @@ class Caravan extends Model
     protected $casts = [
         'kimberley_date_updated' => 'datetime:Y-m-d H:i:s',
         'created_at' => 'datetime:Y-m-d H:i:s',
-        'updated_at' => 'datetime:Y-m-d H:i:s'
+        'updated_at' => 'datetime:Y-m-d H:i:s',
+        'web_price' => 'decimal: 2',
+        'previous_price' => 'decimal: 2'
     ];
+
+
+    /**
+     * @return BelongsTo
+     */
+    public function category() : BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+
+    }
+
+
+    /**
+     * @return BelongsTo
+     */
+    public function type() : BelongsTo
+    {
+        return $this->belongsTo(Type::class, 'type_id', 'id');
+    }
     
     /**
      * @return int

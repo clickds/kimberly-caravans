@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\CaravanRepository;
 use Illuminate\Contracts\View\View;
 
 /**
@@ -12,12 +13,24 @@ use Illuminate\Contracts\View\View;
 class WebMotorHomesController extends Controller
 {
 
+    private CaravanRepository $caravansRepo;
+
+    public function __construct(CaravanRepository $caravanRepository)
+    {
+        $this->caravansRepo = $caravanRepository;
+    }
+
     /**
      * @return View
      */
     public function index() : View
     {
-        return view('motor_homes.index');
+        // fetch
+        $motorHomes = $this->caravansRepo->getAllByCategory('Motorhome');
+
+        return view('motor_homes.index',[
+            'motor_homes' => $motorHomes
+        ]);
     }
 
     /**
@@ -25,7 +38,13 @@ class WebMotorHomesController extends Controller
      */
     public function new() : View
     {
-        return view('motor_homes.new');
+
+        // fetch
+        $motorHomes = $this->caravansRepo->getNewByCategory('Motorhome');
+
+        return view('motor_homes.new',[
+            'motor_homes' => $motorHomes
+        ]);
     }
 
     /**
@@ -33,6 +52,12 @@ class WebMotorHomesController extends Controller
      */
     public function used() : View
     {
-        return view('motor_homes.used');
+
+        // fetch
+        $motorHomes = $this->caravansRepo->getUsedByCategory('Motorhome');
+
+        return view('motor_homes.used',[
+            'motor_homes' => $motorHomes
+        ]);
     }
 }
