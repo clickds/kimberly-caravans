@@ -3,6 +3,7 @@
 use App\Http\Controllers\Web\WebAwningsController;
 use App\Http\Controllers\Web\WebCaravansController;
 use App\Http\Controllers\Web\WebHomeController;
+use App\Http\Controllers\Web\WebLocationsController;
 use App\Http\Controllers\Web\WebMotorHomesController;
 use App\Http\Controllers\Web\WebNewsController;
 use App\Http\Controllers\Web\WebPagesController;
@@ -35,5 +36,6 @@ Route::get('/news',[WebNewsController::class,'index'])->name('news.index');
 Route::get('/news/{news}',[WebNewsController::class,'single'])->name('news.single');
 Route::get('/about-us',[WebPagesController::class,'about']);
 Route::get('/contact-us',[WebPagesController::class,'contact']);
-Route::get('/our-locations',[WebPagesController::class,'locations']);
+Route::get('/our-locations',[WebLocationsController::class,'index'])->name('locations.index');
+Route::get('/our-locations/{location}',[WebLocationsController::class,'single'])->name('locations.single');
 Route::get('/search',[WebSearchController::class,'index'])->name('search.index');
