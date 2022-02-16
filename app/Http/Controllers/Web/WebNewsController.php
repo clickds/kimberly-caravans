@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\News;
 use App\Repositories\NewsRepository;
 use Illuminate\Contracts\View\View;
 
@@ -38,6 +39,17 @@ class WebNewsController extends Controller
 
         return view('news.index',[
             'latest_news'=>$latestNews
+        ]);
+    }
+
+    /**
+     * @param News $news
+     * @return View
+     */
+    public function single(News $news) : View
+    {
+        return view('news.single',[
+            'news' => $news
         ]);
     }
 }

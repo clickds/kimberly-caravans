@@ -3,7 +3,7 @@
 @section('body')
     @foreach($latest_news as $article)
         {{$article->title}}
-        {{$article->buildExcerpt(50)}}
+        {!! $article->buildExcerpt(50) !!}
         <a href="/news/{{$article->id}}">Read more</a>
         {{$article->created_at->format('d/m/Y H:i')}}
         {{$article->author->name}}

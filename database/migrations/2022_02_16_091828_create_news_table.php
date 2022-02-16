@@ -20,7 +20,16 @@ class CreateNewsTable extends Migration
             $table->string('slug',255)->nullable(false);
             $table->text('content');
             $table->boolean('published')->default(true);
-            $table->mediumInteger('author_id')->nullable(false);
+            $table->unsignedBigInteger('author_id')->nullable(false);
+
+
+        });
+
+        // add foreign keys
+        Schema::table('news',function(Blueprint $table) {
+
+            // add foreign keys
+            $table->foreign('author_id')->references('id')->on('users');
         });
     }
 

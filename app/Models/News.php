@@ -43,7 +43,7 @@ class News extends Model
      */
     public function author() : BelongsTo
     {
-        return $this->belongsTo(User::class, 'id', 'author_id');
+        return $this->belongsTo(User::class, 'author_id', 'id');
     }
 
     /**
@@ -54,6 +54,6 @@ class News extends Model
      */
     public function buildExcerpt(int $characters = 50, string $openWrap = '<p>', string $closeWrap = '</p>') : string
     {
-        return $openWrap . substr(strip_tags($this->content), 0, $characters) . $closeWrap;
+        return $openWrap . substr(strip_tags($this->content), 0, $characters) . '...' . $closeWrap;
     }
 }

@@ -31,6 +31,7 @@ Route::get('/awnings/caravan',[WebAwningsController::class,'caravan']);
 Route::get('/awnings/camper-van',[WebAwningsController::class,'camper']);
 Route::get('/awnings/motor-home',[WebAwningsController::class,'motorHome']);
 Route::get('/news',[WebNewsController::class,'index']);
+Route::get('/news/{news}',[WebNewsController::class,'single']);
 Route::get('/about-us',[WebPagesController::class,'about']);
 Route::get('/contact-us',[WebPagesController::class,'contact']);
 Route::get('/our-locations',[WebPagesController::class,'locations']);
