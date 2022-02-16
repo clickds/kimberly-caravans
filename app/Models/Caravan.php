@@ -68,19 +68,21 @@ class Caravan extends Model
 
 
     /**
-     * @return HasOne
+     * @return BelongsTo
      */
-    public function category() : HasOne
+    public function category() : BelongsTo
     {
-        return $this->hasOne(Category::class, 'id', 'category_id');
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+
     }
 
+
     /**
-     * @return HasOne
+     * @return BelongsTo
      */
-    public function type() : HasOne
+    public function type() : BelongsTo
     {
-        return $this->hasOne(Type::class, 'type_id', 'id');
+        return $this->belongsTo(Type::class, 'type_id', 'id');
     }
     
     /**

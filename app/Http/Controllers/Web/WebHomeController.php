@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Models\Caravan;
 use App\Repositories\CaravanRepository;
 use Illuminate\Contracts\View\View;
 

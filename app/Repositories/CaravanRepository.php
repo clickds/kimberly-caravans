@@ -4,6 +4,8 @@ namespace App\Repositories;
 
 use App\Models\Caravan;
 
+
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
@@ -23,12 +25,14 @@ class CaravanRepository
      */
     public function getUsedByCategory(string $category = 'Caravan', string $orderBy = 'caravan.id', string $order = 'DESC', ?int $number = null) : ?Collection
     {
-        $query = DB::table('caravan')
-            ->join('type','caravan.type_id', '=', 'type.id')
-            ->join('category','caravan.category_id', '=', 'category.id')
-            ->where('type.name','=', 'Used')
-            ->where('category.name', '=', ucwords(strtolower($category)))
-            ->orderBy($orderBy,$order);
+
+        $query = Caravan::query()
+            ->whereRelation('type',function(Builder $builder) {
+                $builder->where('name','Used');
+            })
+            ->whereRelation('category',function(Builder $builder) use ($category) {
+                $builder->where('name',ucwords(strtolower($category)));
+            })->orderBy($orderBy,$order);
 
         if($number !== null)
             $query->limit($number);
@@ -51,12 +55,16 @@ class CaravanRepository
     public function getNewByCategory(string $category = 'Caravan', string $orderBy = 'caravan.id', string $order = 'DESC', ?int $number = null) : ?Collection
     {
 
-        $query = DB::table('caravan')
-            ->join('type','caravan.type_id', '=', 'type.id')
-            ->join('category','caravan.category_id', '=', 'category.id')
-            ->where('type.name','=', 'New')
-            ->where('category.name', '=', ucwords(strtolower($category)))
-            ->orderBy($orderBy,$order);
+        $query = Caravan::query()
+            ->whereRelation('type',function(Builder $builder) {
+                $builder->where('name','New');
+            })
+            ->whereRelation('category',function(Builder $builder) use ($category) {
+                $builder->where('name',ucwords(strtolower($category)));
+            })->orderBy($orderBy,$order);
+
+        if($number !== null)
+            $query->limit($number);
 
         if($number !== null)
             $query->limit($number);
@@ -76,10 +84,13 @@ class CaravanRepository
      */
     public function getAllByCategory(string $category = 'Caravan', string $orderBy = 'caravan.id', string $order = 'DESC', ?int $number = null) : ?Collection
     {
-        $query = DB::table('caravan')
-            ->join('category','caravan.category_id', '=', 'category.id')
-            ->where('category.name', '=', ucwords(strtolower($category)))
-            ->orderBy($orderBy,$order);
+        $query = Caravan::query()
+            ->whereRelation('category',function(Builder $builder) use ($category) {
+                $builder->where('name',ucwords(strtolower($category)));
+            })->orderBy($orderBy,$order);
+
+        if($number !== null)
+            $query->limit($number);
 
         if($number !== null)
             $query->limit($number);

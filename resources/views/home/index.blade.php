@@ -23,7 +23,7 @@
     {{ $caravan->make }}
     {{ $caravan->model }}
     {{ $caravan->year }}
-    Used Caravan
+    {{$caravan->type->name}}
     {{ $caravan->reg }}
     {{ $caravan->berths }} Berths
     {{ $caravan->web_price }}
@@ -40,7 +40,7 @@
     {{ $motorHome->make }}
     {{ $motorHome->model }}
     {{ $motorHome->year }}
-  New Motor Home
+    {{$motorHome->type->name}}
     {{ $motorHome->reg }}
     {{ $motorHome->berths }} Berths
     {{ $motorHome->web_price }}
@@ -57,7 +57,7 @@
     {{ $motorHome->make }}
     {{ $motorHome->model }}
     {{ $motorHome->year }}
-    Used Motor Home
+    {{$motorHome->type->name}}
     {{ $motorHome->reg }}
     {{ $motorHome->berths }} Berths
     {{ $motorHome->web_price }}
