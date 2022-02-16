@@ -85,41 +85,40 @@ class DmsImportCommand extends Command
                     }
 
                     // add data
-                    $caravan->setStock((int)$report->STOCK)
-                        ->setBranchId($branch->id)
-                        ->setCategory($category)
-                        ->setType($type)
-                        ->setBranch($branch)
-                        ->setReg($report->Reg)
-                        ->setMake($report->Make)
-                        ->setModel($report->Model)
-                        ->setSpecification($report->Specification)
-                        ->setDerivative($report->Derivative)
-                        ->setEngineSize($report->Engine_Size)
-                        ->setEngineType($report->Engine_Type)
-                        ->setTransmission($report->Transmission)
-                        ->setColour($report->Colour)
-                        ->setYear((int)$report->Year)
-                        ->setMileage((int)$report->Mileage)
-                        ->setCommercial((bool)$report->Commercial)
-                        ->setSalesSiv((double)$report->Sales_SIV)
-                        ->setRetail((double)$report->Retail)
-                        ->setWebPrice((double)$report->Web_Price)
-                        ->setSubHeading($report->Sub_Heading)
-                        ->setAdvertisingNotes($report->Advertising_Notes)
-                        ->setManagerComments($report->Manager_Comments)
-                        ->setPreviousPrice((double)$report->Previous_Price)
-                        ->setGuideRetailPrice((double)$report->Guide_Retail)
-                        ->setAvailableForSale((bool)$report->Available_for_Sale)
-                        ->setAdvertisedOnOwnWebsite((bool)$report->Advertise_on_Own_Web_Site)
-                        ->setBerths((int)$report->Berths)
-                        ->setAxles((int)$report->Axles)
-                        ->setLayoutType($report->Layout_Type_)
-                        ->setWidth((double)$report->Width)
-                        ->setLength((double)$report->Length)
-                        ->setHeight((double)$report->Height)
-                        ->setKimberleyUnitId((int)$report->Kimberley_Unit_Id)
-                        ->setKimberleyDateUpdated(\DateTime::createFromFormat('d/m/y',$report->Date_Record_Updated));
+                    $caravan->stock = (int)$report->STOCK;
+                    $caravan->branch_id = $branch->id;
+                    $caravan->category_id = $category->id;
+                    $caravan->type_id = $type->id;
+                    $caravan->reg = $report->Reg;
+                    $caravan->make = $report->Make;
+                    $caravan->model = $report->Model;
+                    $caravan->specification = $report->Specification;
+                    $caravan->derivative = $report->Derivative;
+                    $caravan->engine_size = $report->Engine_Size;
+                    $caravan->engine_type = $report->Engine_Type;
+                    $caravan->transmission = $report->Transmission;
+                    $caravan->colour = $report->Colour;
+                    $caravan->year = (int)$report->Year;
+                    $caravan->mileage = (int)$report->Mileage;
+                    $caravan->commercial = (bool)$report->Commercial;
+                    $caravan->sales_siv = (double)$report->Sales_SIV;
+                    $caravan->retail = (double)$report->Retail;
+                    $caravan->web_price = (double)$report->Web_Price;
+                    $caravan->sub_heading = $report->Sub_Heading;
+                    $caravan->advertising_notes = $report->Advertising_Notes;
+                    $caravan->manager_comments = $report->Manager_Comments;
+                    $caravan->previous_price = (double)$report->Previous_Price;
+                    $caravan->guide_retail_price = (double)$report->Guide_Retail;
+                    $caravan->available_for_sale = (bool)$report->Available_for_Sale;
+                    $caravan->advertised_on_own_website = (bool)$report->Advertise_on_Own_Web_Site;
+                    $caravan->berths = (int)$report->Berths;
+                    $caravan->axles = (int)$report->Axles;
+                    $caravan->layout_type = $report->Labout_Type_;
+                    $caravan->width = (double)$report->Width;
+                    $caravan->length = (double)$report->Length;
+                    $caravan->height = (double)$report->Height;
+                    $caravan->kimberley_unit_id = (int)$report->Kimberley_Unit_Id;
+                    $caravan->kimberley_date_updated = \DateTime::createFromFormat('d/m/y',$report->Date_Record_Updated);
 
                     $caravan->save();
 
