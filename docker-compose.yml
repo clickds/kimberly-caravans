@@ -30,3 +30,4 @@ services:
     volumes:
       - ./:/var/www/html
       - ./docker/vhost.conf:/etc/apache2/sites-available/000-default.conf
+      - kimberly-db:/var/lib/mysql
