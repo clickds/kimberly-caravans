@@ -24,7 +24,8 @@ class CategoryRepository
         if(!$cat = Category::where('name',$catName)->first()){
 
             // create new cat
-            $cat = (new Category())->setName($catName);
+            $cat = new Category;
+            $cat->name = $catName;
             $cat->save();
         }
 

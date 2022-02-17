@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Artisan;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,5 +19,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             NewsSeeder::class
         ]);
+
+        // import from api
+        Artisan::call('dms:import');
     }
 }

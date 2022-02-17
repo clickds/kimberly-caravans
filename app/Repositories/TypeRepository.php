@@ -25,7 +25,8 @@ class TypeRepository
         if(!$type = Type::where('name',$typeName)->first()){
 
             // create new type
-            $type = (new Type())->setName($typeName);
+            $type = new Type;
+            $type->name = $typeName;
             $type->save();
         }
 

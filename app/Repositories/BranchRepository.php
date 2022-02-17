@@ -23,7 +23,8 @@ class BranchRepository
         if(!$branch = Branch::where('name',$branchName)->first()){
 
             // create new branch
-            $branch = (new Branch())->setName($branchName);
+            $branch = new Branch;
+            $branch->name = $branchName;
             $branch->save();
         }
 

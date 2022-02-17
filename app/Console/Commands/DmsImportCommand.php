@@ -113,7 +113,7 @@ class DmsImportCommand extends Command
                     $caravan->advertised_on_own_website = (bool)$report->Advertise_on_Own_Web_Site;
                     $caravan->berths = (int)$report->Berths;
                     $caravan->axles = (int)$report->Axles;
-                    $caravan->layout_type = $report->Labout_Type_;
+                    $caravan->layout_type = $report->Layout_Type_;
                     $caravan->width = (double)$report->Width;
                     $caravan->length = (double)$report->Length;
                     $caravan->height = (double)$report->Height;
