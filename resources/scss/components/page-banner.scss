@@ -1,0 +1,37 @@
+.page-banner {
+    height: 647px;
+    background-color: #797979;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 5;
+        background-color: #000;
+        opacity: 0.2;
+        top: 0;
+        left: 0;
+    }
+
+    &__inner {
+        height: 100%;
+        display: flex;
+        @include container();
+        position: relative;
+        z-index: 10;
+    }
+
+    &__title {
+        @include fontsize(60px);
+        font-weight: 700;        
+        padding: 0 0 150px 0;
+    }
+
+    h1 {
+        margin: 0;
+        align-self: flex-end;
+        color: #fff;
+   }
+}

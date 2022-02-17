@@ -2,6 +2,7 @@
 
 @section('body')
     <!-- THIS IS THE NEW CARAVANS TAB CONTENT -->
+    @include('components/page-banner')
     @foreach($new_caravans as $caravan) :
     {{$caravan->id}}
     {{ $caravan->make }}

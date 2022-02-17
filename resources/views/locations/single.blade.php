@@ -1,6 +1,7 @@
 @extends('layouts/site')
 
 @section('body')
+    @include('components/page-banner')
     <h1>{{$location->name}}</h1>
 
     @if($location->heading_1 and $location->content_1)

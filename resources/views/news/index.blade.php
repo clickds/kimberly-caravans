@@ -1,6 +1,7 @@
 @extends('layouts/site')
 
 @section('body')
+    @include('components/page-banner')
     @foreach($latest_news as $article)
         {{$article->title}}
         {!! $article->buildExcerpt(50) !!}

@@ -1,6 +1,7 @@
 @extends('layouts/site')
 
 @section('body')
+    @include('components/page-banner')
     @foreach($new_motor_homes as $caravan) :
     {{$caravan->id}}
     {{ $caravan->make }}
