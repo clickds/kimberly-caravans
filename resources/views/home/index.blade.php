@@ -12,7 +12,7 @@
           </div>
     </div>
     <div class="carousel__background"></div>
-</div
+</div>
 
 
 <section class="site-search">
@@ -81,72 +81,59 @@
     </div>
 </section>
 
+<section class="tab-listing">
+    <div class="tab-listing__container">
+        <header class="tab-listing__header">
+            <div class="tab-listing__title">
+                <h2>
+                    <span>Discover</span>
+                    Our Latest Stock
+                </h2>
+            </div>
+            <div class="tab-listing__tabs">
+                <ul class="tab-listing__tabs__list">
+                    <li data-id="0" class="tab-listing__tabs__item tab-listing__tabs__item--active">New Caravans</li>
+                    <li data-id="1" class="tab-listing__tabs__item">Used Caravans</li>
+                    <li data-id="2" class="tab-listing__tabs__item">New Motorhomes</li>
+                    <li data-d="3" class="tab-listing__tabs__item">Used Motorhomes</li>
+                </ul>
+            </div>
+        </header>
+        <div class="tab-listing__list tab-listing__list--active" id="tab-listing__list-0">
+            <!-- THIS IS THE NEW CARAVANS TAB CONTENT -->
+            @foreach($new_caravans as $caravan)
+                @include('caravans/listing-item')
+            @endforeach
+            </div>
+        <!-- END OF NEW CARAVANS -->
 
+    <div class="tab-listing__list" id="tab-listing__list-1">
+        <!-- THIS IS THE USED CARAVANS TAB CONTENT -->
+        @foreach($used_caravans as $caravan)
+            @include('caravans/listing-item')
+            <!-- there is no monthly payment amount in the api data, nor is there a town/location -->
+        @endforeach
+        <!-- END OF USED CARAVANS -->
+    </div> 
 
-    <!-- THIS IS THE NEW CARAVANS TAB CONTENT -->
-    @foreach($new_caravans as $caravan) :
-    {{$caravan->id}}
-        {{ $caravan->make }}
-        {{ $caravan->model }}
-        {{ $caravan->year }}
-    {{$caravan->type->name}}
-        {{ $caravan->reg }}
-        {{ $caravan->berths }} Berths
-        {{ $caravan->web_price }}
-        {{ $caravan->previous_price }}
-
-        <!-- there is no monthly payment amount in the api data, nor is there a town/location -->
-
-    @endforeach
-    <!-- END OF NEW CARAVANS -->
-
-    <!-- THIS IS THE USED CARAVANS TAB CONTENT -->
-    @foreach($used_caravans as $caravan) :
-    {{ $caravan->make }}
-    {{ $caravan->model }}
-    {{ $caravan->year }}
-    {{$caravan->type->name}}
-    {{ $caravan->reg }}
-    {{ $caravan->berths }} Berths
-    {{ $caravan->web_price }}
-    {{ $caravan->previous_price }}
-
-    <!-- there is no monthly payment amount in the api data, nor is there a town/location -->
-
-    @endforeach
-    <!-- END OF USED CARAVANS -->
-
-
+    <div class="tab-listing__list" id="tab-listing__list-2">
     <!-- THIS IS THE NEW MOTORHOMES TAB CONTENT -->
-    @foreach($new_motor_homes as $motorHome) :
-    {{ $motorHome->make }}
-    {{ $motorHome->model }}
-    {{ $motorHome->year }}
-    {{$motorHome->type->name}}
-    {{ $motorHome->reg }}
-    {{ $motorHome->berths }} Berths
-    {{ $motorHome->web_price }}
-    {{ $motorHome->previous_price }}
-
+    @foreach($new_motor_homes as $caravan)
+     @include('caravans/listing-item')
     <!-- there is no monthly payment amount in the api data, nor is there a town/location -->
-
     @endforeach
     <!-- END OF NEW MOTORHOMES -->
+    </div>
 
-
+    <div class="tab-listing__list" id="tab-listing__list-3">
     <!-- THIS IS THE USED MOTORHOMES TAB CONTENT -->
-    @foreach($used_motor_homes as $motorHome) :
-    {{ $motorHome->make }}
-    {{ $motorHome->model }}
-    {{ $motorHome->year }}
-    {{$motorHome->type->name}}
-    {{ $motorHome->reg }}
-    {{ $motorHome->berths }} Berths
-    {{ $motorHome->web_price }}
-    {{ $motorHome->previous_price }}
-
-    <!-- there is no monthly payment amount in the api data, nor is there a town/location -->
-
+    @foreach($used_motor_homes as $caravan)
+        @include('caravans/listing-item')
+        <!-- there is no monthly payment amount in the api data, nor is there a town/location -->
     @endforeach
     <!-- END OF USED MOTORHOMES -->
+    </div>
+</div>
+</section>
 @endsection
+   

@@ -11,9 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+// mix.js('resources/js/app.js', 'public/js')
+//     .postCss('resources/css/app.css', 'public/css', [
+//         //
+//     ]);
+
+mix.js([
+    'node_modules/glider-js/glider.min.js',
+    'resources/js/app.js',
+], 'public/js/build.js')
 
 mix.sass('resources/scss/build.scss', 'public/css');
