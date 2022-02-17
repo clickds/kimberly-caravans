@@ -26,13 +26,13 @@
                             <span class="site-footer__about__social__title">Social</span>
                             <ul class="site-footer__about__social__list">
                             <li class="site-footer__about__social__list__item">
-                                    <a href="#" target='_blank'><i class="fa-brands fa-facebook-square"></i></a>
+                                    <a href="{{ config('kimberley.social.fb') }}" target='_blank'><i class="fa-brands fa-facebook-square"></i></a>
                                 </li>
                                 <li class="site-footer__about__social__list__item">
-                                    <a href="#" target='_blank'><i class="fa-brands fa-instagram"></i></a>
+                                    <a href="{{ config('kimberley.social.in') }}" target='_blank'><i class="fa-brands fa-instagram"></i></a>
                                 </li>
                                 <li class="site-footer__about__social__list__item">
-                                    <a href="#" target='_blank'><i class="fa-brands fa-twitter-square"></i></a>
+                                    <a href="{{ config('kimberley.social.tw') }}" target='_blank'><i class="fa-brands fa-twitter-square"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -44,32 +44,32 @@
                                     Kimberley Nottingham
                                 </div>
                                 <address class="site-footer__about__locations__item__address">
-                                    Eastwood Road, Kimberley, Nottingham, Nottinghamshire, NG16 2HX Find us
+                                    {{ config('kimberley.address.nottingham') }} Find us
                                 </address>
                                 <a class="site-footer__about__locations__item__link" href="tel:01159382401">
-                                    Sales: 01159 382 401
+                                    Sales: {{ config('kimberley.phone.sales') }}
                                 </a>
                             </div>    
                             <div class="site-footer__about__locations__item">
                             <div class="site-footer__about__locations__item__title">
-                                    Kimberley Nottingham
+                                    Kimberley Darlingtom
                                 </div>
                                 <address class="site-footer__about__locations__item__address">
-                                    Eastwood Road, Kimberley, Nottingham, Nottinghamshire, NG16 2HX Find us
+                                    {{ config('kimberley.address.darlington') }} Find us
                                 </address>
                                 <a class="site-footer__about__locations__item__link" href="tel:01159382401">
-                                    Sales: 01159 382 401
+                                    Sales: {{ config('kimberley.phone.sales') }}
                                 </a>
                             </div>    
                             <div class="site-footer__about__locations__item">
                             <div class="site-footer__about__locations__item__title">
-                                    Kimberley Nottingham
+                                    Kimberley Chesterfield
                                 </div>
                                 <address class="site-footer__about__locations__item__address">
-                                    Eastwood Road, Kimberley, Nottingham, Nottinghamshire, NG16 2HX Find us
+                                    {{ config('kimberley.address.chesterfield') }} Find us
                                 </address>
                                 <a class="site-footer__about__locations__item__link" href="tel:01159382401">
-                                    Sales: 01159 382 401
+                                    Sales: {{ config('kimberley.phone.sales') }}
                                 </a>
                             </div>      
                         </div>      
@@ -86,20 +86,20 @@
                         </div>
                         <div class="site-footer__menus__column site-footer__menus__column--list">
                         <ul class="site-footer__menus__menu">
-                                <li class="site-footer__menus__item"><a href="">Home</a></li>
-                                <li class="site-footer__menus__item"><a href="">About Us</a></li>
+                                <li class="site-footer__menus__item"><a href="{{ route('home') }}">Home</a></li>
+                                <li class="site-footer__menus__item"><a href="{{ route('page.about') }}">About Us</a></li>
                                 <li class="site-footer__menus__item"><a href="">Services</a></li>
-                                <li class="site-footer__menus__item"><a href="">Locations</a></li>
+                                <li class="site-footer__menus__item"><a href="{{ route('locations.index') }}">Locations</a></li>
                             </ul>
                         <ul class="site-footer__menus__menu">
-                                <li class="site-footer__menus__item"><a href="">News and Information</a></li>
-                                <li class="site-footer__menus__item"><a href="">New Caravans</a></li>
-                                <li class="site-footer__menus__item"><a href="">Used Caravans</a></li>
-                                <li class="site-footer__menus__item"><a href="">New Motor Homes</a></li>
+                                <li class="site-footer__menus__item"><a href="{{ route('news.index') }}">News and Information</a></li>
+                                <li class="site-footer__menus__item"><a href="{{ route('caravans.new') }}">New Caravans</a></li>
+                                <li class="site-footer__menus__item"><a href="{{ route('caravans.used') }}">Used Caravans</a></li>
+                                <li class="site-footer__menus__item"><a href="{{ route('motorhomes.new') }}">New Motor Homes</a></li>
                             </ul>
                             <ul class="site-footer__menus__menu">
-                                <li class="site-footer__menus__item"><a href="">Used Motor Homes</a></li>
-                                <li class="site-footer__menus__item"><a href="">Awnings</a></li>
+                                <li class="site-footer__menus__item"><a href="{{ route('motorhomes.used') }}">Used Motor Homes</a></li>
+                                <li class="site-footer__menus__item"><a href="{{ route('awnings.index') }}">Awnings</a></li>
                             </ul>
                         </div>
                         <div class="site-footer__menus__column site-footer__menus__column--button">
@@ -116,10 +116,10 @@
                         Kimberley Caravan Centre Ltd. Registered office: Eastwood Road, Kimberley, Nottingham NG16 2HX. Registered in England & Wales No. 01702419
                     </div>
                     <ul class="site-footer__copyright__menu">
-                        <li class="site-footer__copyright__menu__item"><a href="">Privacy Policy</a></li>
-                        <li class="site-footer__copyright__menu__item"><a href="">T&Cs</a></li>
-                        <li class="site-footer__copyright__menu__item"><a href="">Cookie policy</a></li>
-                        <li class="site-footer__copyright__menu__item"><a href="">Sitemap</a></li>
+                        <li class="site-footer__copyright__menu__item"><a href="{{ route('page.privacy') }}">Privacy Policy</a></li>
+                        <li class="site-footer__copyright__menu__item"><a href="{{ route('page.tc') }}">T&Cs</a></li>
+                        <li class="site-footer__copyright__menu__item"><a href="{{ route('page.cookie') }}">Cookie policy</a></li>
+                        <li class="site-footer__copyright__menu__item"><a href="{{ route('page.sitemap') }}">Sitemap</a></li>
                      </ul>
                 </div>
             </div>

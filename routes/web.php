@@ -34,8 +34,13 @@ Route::get('/awnings/camper-van',[WebAwningsController::class,'camper'])->name('
 Route::get('/awnings/motor-home',[WebAwningsController::class,'motorHome'])->name('awnings.motorhome');
 Route::get('/news',[WebNewsController::class,'index'])->name('news.index');
 Route::get('/news/{news}',[WebNewsController::class,'single'])->name('news.single');
-Route::get('/about-us',[WebPagesController::class,'about']);
-Route::get('/contact-us',[WebPagesController::class,'contact']);
+Route::get('/about-us',[WebPagesController::class,'about'])->name('page.about');
+Route::get('/contact-us',[WebPagesController::class,'contact'])->name('page.contact');
+Route::get('/we-buy',[WebPagesController::class,'webuy'])->name('page.webuy');
+Route::get('/privacy-policy',[WebPagesController::class,'privacy'])->name('page.privacy');
+Route::get('/terms-conditions',[WebPagesController::class,'tc'])->name('page.tc');
+Route::get('/cookie-policy',[WebPagesController::class,'cookie'])->name('page.cookie');
+Route::get('/sitemap',[WebPagesController::class,'sitemap'])->name('page.sitemap');
 Route::get('/our-locations',[WebLocationsController::class,'index'])->name('locations.index');
 Route::get('/our-locations/{location}',[WebLocationsController::class,'single'])->name('locations.single');
 Route::get('/search',[WebSearchController::class,'index'])->name('search.index');

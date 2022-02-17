@@ -35,4 +35,44 @@ class WebPagesController extends Controller
     {
         return view('pages.locations');
     }
+
+    /**
+     * @return View
+     */
+    public function webuy() : View
+    {
+        return view('pages.webuy');
+    }
+
+    /**
+     * @return View
+     */
+    public function privacy() : View
+    {
+        return view('pages.privacy');
+    }
+
+    /**
+     * @return View
+     */
+    public function tc() : View
+    {
+        return view('pages.tc');
+    }
+
+    /**
+     * @return View
+     */
+    public function cookie() : View
+    {
+        return view('pages.cookie');
+    }
+
+    /**
+     * @return View
+     */
+    public function sitemap() : View
+    {
+        return view('pages.sitemap');
+    }
 }
