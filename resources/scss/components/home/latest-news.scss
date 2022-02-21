@@ -1,0 +1,87 @@
+.latest-news {
+
+    margin: 175px 0;
+
+    &__container {
+        @include container;
+    }
+
+    &__header {
+        @include section_header();
+    }
+
+    &__title {
+        @include section_header_title();
+    }
+
+    &__list {
+
+        @include row(35px);
+
+        &__item {
+            position: relative;
+            border-radius: 10px;
+            padding: 0 35px 20px 35px;
+
+            &__title {
+                font-weight: 400;
+                @include fontsize(20px);
+                margin: 0 0 15px 0;
+            }
+
+            &__tag {
+                font-weight: 400;
+                @include fontsize(14px);
+                background-color: #17b1e7;
+                line-height: 1;
+                padding: 5px;
+                display: inline-block;
+                color: #fff;
+                border-radius: 5px;
+                margin: 0 0 20px 0;
+
+                &--news {
+                    background-color: #17b1e7;
+                    color: #fff;
+                }
+
+                &--event {
+                    background-color: #a6cf4d;
+                    color: #fff;
+                }
+            }
+
+            &__inner {
+                min-height: 310px;
+                background-color: #ffffff;
+                object-fit: cover;
+            }    
+
+            &__content {
+                padding: 20px 20px 80px 20px;
+                position: relative;
+            }
+
+            &__link {
+                position: absolute;
+                left: 20px;
+                bottom: 0;
+                background-color: #faa634;
+                @include fontsize(16px);
+                border: none;
+                cursor: pointer;
+                color: #fff;
+                padding: 12px 15px;
+                line-height: 1;
+                width: 155px;
+                max-width: 100%;
+                display: inline-block;
+                font-weight: 700;
+                text-align: center;
+                border-radius: 5px;
+                margin: 15px 0;
+                text-decoration: none;
+            }
+        }
+    }
+}

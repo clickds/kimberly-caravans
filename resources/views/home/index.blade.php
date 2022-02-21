@@ -135,5 +135,9 @@
     </div>
 </div>
 </section>
+
+@include('home/call-to-action')
+@include('home/latest-news')
+
 @endsection
    

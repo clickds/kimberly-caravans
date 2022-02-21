@@ -1,5 +1,5 @@
 .tab-listing {
-    margin: 75px 0 75px 0;   
+    margin: 75px 0 150px 0;   
 
 
     &__container {
@@ -11,23 +11,19 @@
     }
 
     &__header {
+        @include section_header();
+    }
+
+    &__title {
+        @include section_header_title();
+    }
+
+    &__header {
         border-bottom: 1px solid #06354d;
         @include flex;
         margin: 0 0 45px 0;
     }
     
-
-    &__title {
-        @include fontsize(30px);
-        font-weight: 700;
-        span {
-            font-weight: 400;
-            color: #03354e;
-            display: block;
-            @include fontsize(16px);
-        }
-    }
-
     &__tabs {
         flex-grow: 1;
         @include flex;

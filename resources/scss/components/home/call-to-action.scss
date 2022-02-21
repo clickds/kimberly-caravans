@@ -1,0 +1,73 @@
+.cta-list {
+    margin: 170px 0 170px 0;
+    &__container {
+        @include container;
+    }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+        min-height: 266px;
+        cursor: pointer;
+
+        &__image {
+            position: absolute;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            z-index: 10;
+        }
+        &__text {
+            position: relative;
+
+            &__title {
+                position: relative;
+                z-index: 20;
+                padding: 28px 28px;
+                @include fontsize(25px);
+                font-weight: 700;
+                color: #fff;
+            }
+
+            &__background {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: -17px;
+                z-index: 10;
+                left: -24px;
+                svg {
+                    transform: rotate(-81deg);
+                    transition: 250ms filter;
+                }
+            }    
+        }        
+
+        &__button {
+            background-color: #fff;
+            color: #faa634;
+            @include fontsize(17px);
+            font-weight: 700;
+            position: absolute;
+            left: 28px;
+            bottom: 28px;
+            z-index: 20;
+            display: block;
+            width: 100%;
+            max-width: 150px;
+            text-align: center;
+            text-decoration: none;
+            padding: 12px 0;
+            border-radius: 5px;
+        }
+
+        &:hover &__text {
+            &__background {
+                svg {
+                    filter: invert(100%);
+                }
+            }
+        }
+    }
+
+}

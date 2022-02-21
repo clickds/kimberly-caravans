@@ -1,15 +1,36 @@
 require('./bootstrap');
 
 window.addEventListener('load', function(){
-  document.querySelectorAll('.tab-listing__list').forEach(function(node, index) {
-  	new Glider(node, {
-  		slidesToShow: 3,
-  		slidesToScroll: 1,
-  		draggable: true
-  	});
-  })
-})
+	document.querySelectorAll('.tab-listing__list').forEach(function(node, index) {
+		new Glider(node, {
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			draggable: true
+		});
+	})
+  });
 
+  
+  window.addEventListener('load', function(){
+	document.querySelectorAll('.cta-list__list').forEach(function(node, index) {
+		new Glider(node, {
+			slidesToShow: 4,
+			slidesToScroll: 1,
+			draggable: false
+		});
+	})
+  })
+
+  window.addEventListener('load', function(){
+	document.querySelectorAll('.latest-news__list').forEach(function(node, index) {
+		new Glider(node, {
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			draggable: true
+		});
+	})
+  })
+  
 $(document).ready(function() {
 	$('.tab-listing__tabs__item').on('click', function() {
 		let id = $(this).attr('data-id');
