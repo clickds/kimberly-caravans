@@ -1,0 +1,8 @@
+.caravan-listing {
+    &__container {
+        @include container;
+    }
+    &__list {
+        @include row(30px);
+    }
+}
