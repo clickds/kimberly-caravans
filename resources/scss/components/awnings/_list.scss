@@ -1,0 +1,54 @@
+.awnings-list {
+    margin: 100px 0 100px 0;
+
+    a {
+        color: #03354e;
+    }
+
+    &__inner {
+        @include container;
+    }
+
+    &__title {
+        margin: 0 0 50px 0;
+        color: #03354e;
+    }
+
+    &__list {
+        @include row(16px);
+
+
+
+        &__item {
+            @include column(16px, 33.33%);
+            margin: 0 0 40px 0;
+
+            &__inner {
+                position: relative;
+            }
+
+            img {
+                height: 308px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            &__title {
+                @include fontsize(20px);
+                font-weight: 400;
+                position: absolute;
+                left: 0;
+                top: 25px;
+                padding: 30px 5px 30px 25px;
+                background-color: #fff;
+                width: 298px;
+                max-width: 100%;
+            }
+
+        }
+
+    }
+
+
+    
+}

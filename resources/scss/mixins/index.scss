@@ -43,6 +43,12 @@
     flex-wrap: wrap;
 }
 
+@mixin column($padding, $width) {
+    padding-left: $padding;
+    padding-right: $padding;
+    width: $width;
+}
+
 
 @mixin listing_item() {
 

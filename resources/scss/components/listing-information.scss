@@ -1,0 +1,16 @@
+.listing-information {
+    margin: 125px 0 125px 0;
+    text-align: center;
+    &__container {
+        @include alt-container;
+    }
+    &__title {
+        span {
+            font-weight: 400;
+            color: #03354e;
+            display: block;
+            font-size: 1rem;
+            text-transform: uppercase;        
+        }
+    }
+}

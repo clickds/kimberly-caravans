@@ -44,3 +44,8 @@ Route::get('/sitemap',[WebPagesController::class,'sitemap'])->name('page.sitemap
 Route::get('/our-locations',[WebLocationsController::class,'index'])->name('locations.index');
 Route::get('/our-locations/{location}',[WebLocationsController::class,'single'])->name('locations.single');
 Route::get('/search',[WebSearchController::class,'index'])->name('search.index');
+
+// Temporary Routes to Show HTML.
+Route::view('/awning-list', 'static/awning-list');
+
+
